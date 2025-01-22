@@ -1,4 +1,4 @@
-Package: templater
+Package: jaccaRd
 Title: Template for R projects
 Authors@R: c(
     person(given = "nies futbol",
