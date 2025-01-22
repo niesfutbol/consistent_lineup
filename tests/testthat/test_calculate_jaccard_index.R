@@ -1,3 +1,10 @@
+describe("Class calculator of Jaccard index", {
+  it("Creata an instance of the class", {
+    jaccard_calculator <- JaccardIndexCalculator$new()
+    expect_true(is(jaccard_calculator, "JaccardIndexCalculator"))
+  })
+})
+
 describe("Extract players from game", {
   it("players that played more than ten minutes", {
     played_minutes <- readr::read_csv("/workdir/tests/data/played_minutes_xolos.csv", show_col_types = FALSE)
