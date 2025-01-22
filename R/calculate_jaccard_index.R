@@ -1,6 +1,10 @@
 JaccardIndexCalculator <- R6::R6Class("JaccardIndexCalculator",
   public = list(
+    data = NULL,
     initialize = function() {
+    },
+    set_data = function(data) {
+      self$data <- data
     }
   )
 )
