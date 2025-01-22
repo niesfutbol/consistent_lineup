@@ -5,3 +5,11 @@ extract_players_from_team <- function(played_minutes, team_name) {
     unique()
   return(players_of_team)
 }
+
+extract_players_from_match <- function(played_minutes, match_id) {
+  players_of_match <- played_minutes |>
+    dplyr::filter(match == match_id, minutes > 10) |>
+    dplyr::pull(player) |>
+    unique()
+  return(players_of_match)
+}
