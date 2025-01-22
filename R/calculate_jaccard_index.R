@@ -1,3 +1,10 @@
+JaccardIndexCalculator <- R6::R6Class("JaccardIndexCalculator",
+  public = list(
+    initialize = function() {
+    }
+  )
+)
+
 extract_players_from_team <- function(played_minutes, team_name) {
   players_of_team <- .filter_players_from_team_with_more_than_10_minutes(played_minutes, team_name) |>
     .pull_unique_players()
