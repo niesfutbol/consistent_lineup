@@ -21,6 +21,19 @@ describe("Class calculator of Jaccard index", {
     n_expected_players <- 21
     expect_equal(n_obtained_players, n_expected_players)
   })
+  it("return the players of a match", {
+    all_obtained_players <- jaccard_calculator$pull_players_of_match(1323484)
+    n_obtained_players <- length(all_obtained_players)
+    n_expected_players <- 15
+    expect_equal(n_obtained_players, n_expected_players)
+  })
+  testthat::skip("Gold test")
+  it("return the number of players in both match", {
+    all_obtained_players <- jaccard_calculator$pull_repeated_players(1323484, 1323491)
+    n_obtained_players <- length(all_obtained_players)
+    n_expected_players <- 10
+    expect_equal(n_obtained_players, n_expected_players)
+  })
 })
 
 describe("Extract players from game", {
