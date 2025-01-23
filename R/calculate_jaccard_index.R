@@ -1,10 +1,14 @@
 JaccardIndexCalculator <- R6::R6Class("JaccardIndexCalculator",
   public = list(
     data = NULL,
+    data_team = NULL,
     initialize = function() {
     },
     set_data = function(data) {
       self$data <- data
+    },
+    set_team = function(team_name) {
+      self$data_team <- .filter_players_from_team_with_more_than_10_minutes(self$data, team_name)
     }
   )
 )
