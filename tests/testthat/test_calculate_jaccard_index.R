@@ -2,15 +2,14 @@ played_minutes <- readr::read_csv("/workdir/tests/data/played_minutes_xolos.csv"
 
 describe("Class calculator of Jaccard index", {
   jaccard_calculator <- JaccardIndexCalculator$new()
+  jaccard_calculator$set_data(played_minutes)
   it("Creata an instance of the class", {
     expect_true(is(jaccard_calculator, "JaccardIndexCalculator"))
   })
   it("Set up the data", {
-    jaccard_calculator$set_data(played_minutes)
     expect_equal(jaccard_calculator$data, played_minutes)
   })
   it("Set up team", {
-    jaccard_calculator$set_data(played_minutes)
     jaccard_calculator$set_team("Club Tijuana")
     n_obtained_players <- nrow(jaccard_calculator$data_team)
     n_expected_players <- 31
