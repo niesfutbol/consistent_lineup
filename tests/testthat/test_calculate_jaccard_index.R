@@ -33,6 +33,11 @@ describe("Class calculator of Jaccard index", {
     n_expected_players <- 10
     expect_equal(n_obtained_players, n_expected_players)
   })
+  it("return the Jaccard index from two match", {
+    jaccard_index <- jaccard_calculator$jaccard_index(1323484, 1323491)
+    expected_jaccard_index <- 10/21
+    expect_equal(jaccard_index, expected_jaccard_index)
+  })
 })
 
 describe("Extract players from game", {
