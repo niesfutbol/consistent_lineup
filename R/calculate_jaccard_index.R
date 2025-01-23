@@ -12,6 +12,11 @@ JaccardIndexCalculator <- R6::R6Class("JaccardIndexCalculator",
     },
     pull_unique_players = function() {
       .pull_unique_players(self$data_team)
+    },
+    pull_players_of_match = function(match_id) {
+      players_of_match <- self$data_team |>
+        dplyr::filter(match == match_id) |>
+        .pull_unique_players()
     }
   )
 )
