@@ -19,12 +19,8 @@ JaccardIndexCalculator <- R6::R6Class("JaccardIndexCalculator",
         .pull_unique_players()
     },
     pull_repeated_players = function(match_id_1, match_id_2) {
-      players_of_match_1 <- self$data_team |>
-        dplyr::filter(match == match_id_1) |>
-        .pull_unique_players()
-      players_of_match_2 <- self$data_team |>
-        dplyr::filter(match == match_id_2) |>
-        .pull_unique_players()
+      players_of_match_1 <- self$pull_players_of_match(match_id_1)
+      players_of_match_2 <- self$pull_players_of_match(match_id_2)
       repeated_players <- intersect(players_of_match_1, players_of_match_2)
       return(repeated_players)
     }
