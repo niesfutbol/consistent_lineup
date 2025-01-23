@@ -13,6 +13,7 @@ describe("Class calculator of Jaccard index", {
     jaccard_calculator$set_team("Club Tijuana")
     n_obtained_players <- nrow(jaccard_calculator$data_team)
     n_expected_players <- 31
+    expect_equal(n_obtained_players, n_expected_players)
   })
 })
 
