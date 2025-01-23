@@ -35,7 +35,7 @@ describe("Class calculator of Jaccard index", {
   })
   it("return the Jaccard index from two match", {
     jaccard_index <- jaccard_calculator$jaccard_index(1323484, 1323491)
-    expected_jaccard_index <- 10/21
+    expected_jaccard_index <- 10 / 21
     expect_equal(jaccard_index, expected_jaccard_index)
   })
 })
