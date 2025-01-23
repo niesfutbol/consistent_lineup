@@ -23,6 +23,14 @@ JaccardIndexCalculator <- R6::R6Class("JaccardIndexCalculator",
       players_of_match_2 <- self$pull_players_of_match(match_id_2)
       repeated_players <- intersect(players_of_match_1, players_of_match_2)
       return(repeated_players)
+    },
+    jaccard_index = function(match_id_1, match_id_2) {
+      players_of_match_1 <- self$pull_players_of_match(match_id_1)
+      players_of_match_2 <- self$pull_players_of_match(match_id_2)
+      n_repeated_players <- length(intersect(players_of_match_1, players_of_match_2))
+      n_total_players <- length(union(players_of_match_1, players_of_match_2))
+      jaccard_index <- n_repeated_players / n_total_players
+      return(jaccard_index)
     }
   )
 )
