@@ -15,6 +15,12 @@ describe("Class calculator of Jaccard index", {
     n_expected_players <- 31
     expect_equal(n_obtained_players, n_expected_players)
   })
+  it("return the number of all players", {
+    all_obtained_players <- jaccard_calculator$pull_unique_players()
+    n_obtained_players <- length(all_obtained_players)
+    n_expected_players <- 21
+    expect_equal(n_obtained_players, n_expected_players)
+  })
 })
 
 describe("Extract players from game", {
