@@ -1,3 +1,4 @@
+#' @export
 JaccardIndexCalculator <- R6::R6Class("JaccardIndexCalculator",
   public = list(
     data = NULL,
